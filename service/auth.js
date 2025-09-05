@@ -3,7 +3,8 @@ const secret = "Afaq123"
 function setUser(user) {
     return jwt.sign({
         id: user._id,
-        email: user.email,
+        email: user.ema,
+        role: user.role,
     }, secret)
 }
 

@@ -10,14 +10,16 @@ const userSchema = new mongoose.Schema({
         required:true,
         unique:true,
     },
+    role:{
+        type:String,
+        required:true,
+        default:"NORMAL",
+    },
     password:{
         type:String,
         required:true,
     },
-    createdBy:{
-        type: mongoose.Types.ObjectId,
-        ref: 'users',
-    }
+
 }, { timestamps: true, });
 
 const User = mongoose.model('user', userSchema);
